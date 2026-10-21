@@ -31,7 +31,11 @@ SAMPLE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "exe
 #      and std=[0.229, 0.224, 0.225]
 #
 # Store the result in a variable called 'transform'.
-transform = None
+transform = transforms.Compose([
+    transforms.Resize((32, 32)),
+    transforms.ToTensor(),
+    transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])])
+
 
 
 # ===========================================================================

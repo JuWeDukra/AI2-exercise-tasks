@@ -17,6 +17,11 @@ import torch
 #
 # Hint: torch.randn() creates a tensor with random values from a
 # normal distribution. Pass the dimensions as arguments.
+print("Task 1: Tensor Creation and Inspection")
+batch = torch.randn(2, 3, 224, 224)
+print("Shape:", batch.shape)
+print("Dtype:", batch.dtype)
+print("Device:", batch.device)
 
 
 # ===========================================================================
@@ -28,7 +33,14 @@ import torch
 # Step 1: Check if CUDA is available using torch.cuda.is_available().
 # Step 2: Move the tensor using .to('cuda').
 # Step 3: Print the .device attribute to confirm.
-
+print("\nTask 2: Device Transfer")
+if torch.cuda.is_available():
+    batch_gpu = batch.to('cuda')
+    print("Moved to device:", batch_gpu.device)
+else:
+    print("No CUDA available. Tensor remains on device:", batch.device)
+    
+print("Is cuda available:", torch.cuda.is_available())    
 
 # ===========================================================================
 # Task 3: Indexing and Slicing
@@ -41,6 +53,12 @@ import torch
 #
 # Step 2: Extract only the green channel (index 1) of that image.
 #         Print its shape — should be (32, 32).
+
+print("Task 3: Indexing and Slicing")
+new_batch = torch.randn(8, 3, 32, 32)
+x = new_batch[4]
+print(x.shape)
+
 
 
 # ===========================================================================

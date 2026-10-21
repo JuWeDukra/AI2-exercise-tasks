@@ -175,8 +175,8 @@ class SimpleNet(nn.Module):
 | `nn.BatchNorm2d(channels)` | Stabilizes training | `nn.BatchNorm2d(16)` |
 | `nn.MaxPool2d(kernel)` | Downsamples spatial dimensions | `nn.MaxPool2d(2)` |
 | `nn.Dropout(p)` | Regularization — randomly zeroes elements | `nn.Dropout(0.5)` |
-
----
+    ##-> watch explanation videos of those
+--- 
 
 ## 5. Loss Functions and Optimizers
 
